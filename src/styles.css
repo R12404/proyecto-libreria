@@ -1,0 +1,37 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Grape+Nuts&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 100px 0;
+    height: auto;
+    /* background-color: green; */
+}
+
+.container_cards {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    /* background-color: red; */
+}
+
+/* .card:hover > .eliminar{
+    display: block;
+    cursor: pointer;
+} */

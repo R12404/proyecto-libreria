@@ -1,0 +1,15 @@
+<div class="card" >
+    <app-button-delete (click)="onEliminar(libro)">
+
+    </app-button-delete>
+<img
+  src="https://upload.wikimedia.org/wikipedia/commons/4/43/Peace_dove.svg"
+  class="card_img"
+  alt="{{libro.titulo}}"
+/>
+<div class="cards_text">
+  <p class="card_list">{{libro.titulo}}</p>
+  <h3 class="card_title">{{libro.autor.nombre}}<span class="point">.</span></h3>
+  <a href="#" class="card_button">Actualizar</a>
+</div>
+</div>

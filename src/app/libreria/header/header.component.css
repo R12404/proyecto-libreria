@@ -1,0 +1,22 @@
+header {
+    width: 100%;
+    min-height: 10vh;
+    background: linear-gradient(180deg, #30353B 0%, #1a1e1f 100% );
+}
+
+.nav_hero {
+    color: #fff;
+    height: 70px;
+}
+
+.nav_container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: inherit;
+    padding: 0;
+}
+
+.logo-name {
+    font-size: 24px;
+}
