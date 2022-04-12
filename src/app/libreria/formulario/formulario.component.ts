@@ -9,9 +9,9 @@ import { UiServiceService } from 'src/app/services/ui-service.service';
   styleUrls: ['./formulario.component.css']
 })
 export class FormularioComponent implements OnInit {
+  @Output() onGuardarTarea: EventEmitter<Libro> = new EventEmitter();
   titulo: string;
   nombreAutor: string;
-  @Output() onGuardarTarea: EventEmitter<Libro> = new EventEmitter();
   mostrarAgregarLibro: boolean = false;
   subscription: Subscription;
 
@@ -23,20 +23,19 @@ export class FormularioComponent implements OnInit {
   }
 
   onSubmit() {
-    if (!this.titulo){
-      alert('Por favor, añade un nuevo libro');
+    if (!this.titulo && !this.nombreAutor){
+      alert('Debes llenar los campos');
       return;
     }
 
     const newLibro = {
       titulo: this.titulo,
-      nombreAutor: this.nombreAutor
+      autor: this.nombreAutor
     }
 
     this.onGuardarTarea.emit(newLibro);
-
     this.titulo = '';
     this.nombreAutor = '';
   }
-
+  
 }

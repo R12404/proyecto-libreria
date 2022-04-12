@@ -1,6 +1,5 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Autor } from '../interfaces/autor';
 import { Injectable } from '@angular/core';
 import { Libro } from '../interfaces/libro';
 
@@ -20,7 +19,7 @@ export class LibreriaService {
   constructor(private http: HttpClient) {}
 
   getLibros(): Observable<Libro[]> {
-    return this.http.get<Libro[]>(this.baseUrlLibros)
+    return this.http.get<Libro[]>(this.baseUrlLibros);
   }
 
   deleteLibro(libro: Libro): Observable<Libro> {
@@ -34,7 +33,7 @@ export class LibreriaService {
 }
 
   addLibro(libro: Libro): Observable<Libro> {
-      return this.http.post<Libro>(this.baseUrlLibros, libro, httpOptions);
+      return this.http.post<Libro>(this.baseUrlLibros, libro, httpOptions);     
 }
 }
 

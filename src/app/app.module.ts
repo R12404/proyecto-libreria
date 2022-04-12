@@ -11,7 +11,9 @@ import { LibreriaModule } from './libreria/libreria/libreria.module';
 import {HttpClientModule} from '@angular/common/http';
 import { ButtonDeleteComponent } from './libreria/button-delete/button-delete.component';
 import { FormularioComponent } from './libreria/formulario/formulario.component'
-import { NgModel } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+import { ButtonCreateComponent } from './libreria/button-create/button-create.component';
+import { UpdateButtonComponent } from './libreria/update-button/update-button.component';
 
 @NgModule({
   declarations: [
@@ -21,14 +23,16 @@ import { NgModel } from '@angular/forms';
     GridComponent,
     CardComponent,
     ButtonDeleteComponent,
-    FormularioComponent
+    FormularioComponent,
+    ButtonCreateComponent,
+    UpdateButtonComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     LibreriaModule,
     HttpClientModule,
-    NgModel
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

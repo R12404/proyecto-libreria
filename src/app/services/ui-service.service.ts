@@ -10,7 +10,7 @@ export class UiServiceService {
   
   constructor() {}
 
-   toggleAgregarTarea(): void {
+   toggleAgregarLibro(): void {
     this.mostrarAgregarLibro = !this.mostrarAgregarLibro;
     this.subject.next(this.mostrarAgregarLibro);
   }

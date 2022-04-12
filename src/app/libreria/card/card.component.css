@@ -36,13 +36,3 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-.card_button {
-    display: block;
-    background: linear-gradient(180deg, #f7ce90 0%, #f48d76 100%);
-    text-decoration: none;
-    border-radius: 6px;
-    color: black;
-    font-weight: 700;
-    text-align: center;
-    padding: 12px 0;  
-}

@@ -5,7 +5,9 @@
                 <h2 class="logo_name">APP MI LIBRERIA<span class="point">.</span></h2>
             </div>
             <div class="links">
-                <span class="link">VAMOS TODOS A LEER</span>
+                <app-button-create text="{{ mostrarAgregarLibro ? 'Cerrar' : 'AGREGAR LIBRO' }}"
+                (btnClick)="toggleAgregarTarea()"
+                ></app-button-create>
             </div>
         </div>
     </nav>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { UiServiceService } from 'src/app/services/ui-service.service';
 
 @Component({
   selector: 'app-header',
@@ -6,10 +8,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  mostrarAgregarLibro: boolean = false;
 
-  constructor() { }
+  subscription: Subscription;
 
-  ngOnInit(): void {
+  constructor(private uiService: UiServiceService) {
+    this.subscription = this.uiService
+      .onToggle()
+      .subscribe((value) => this.mostrarAgregarLibro = value);
   }
 
+  ngOnInit(): void {}
+
+  toggleAgregarTarea() {
+    this.uiService.toggleAgregarLibro();
+  }
 }

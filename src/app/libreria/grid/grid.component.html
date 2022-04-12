@@ -1,4 +1,7 @@
 <article class="container_cards">
-    <app-card [libro]="libro" *ngFor="let libro of libros" (onEliminarLibro)="eliminarLibro(libro)"></app-card>
+    <div class="container">
+        <app-formulario (onGuardarTarea)="anadirLibro($event)"></app-formulario>
+    </div>
+    <app-card [unico]="uniLibro" *ngFor="let uniLibro of misLibros" (onEliminarLibro)="eliminarLibro(uniLibro)"></app-card>
 </article>
 

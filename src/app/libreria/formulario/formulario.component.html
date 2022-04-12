@@ -1,18 +1,22 @@
-<form action="" *ngIf="mostrarAgregarLibro" (ngSubmit)="onSubmit()">
-  <div class="">
-    <label for="titulo">Libro</label>
-    <div class="titulo-input">
-      <input type="text" name="titulo" id="titulo" [(ngModel)="titulo"/>
-    </div>
+<div class="formulario" *ngIf="mostrarAgregarLibro">
+  <div class="titulo-anadir">
+    <h2 class="formulario-titulo">AÑADIR NUEVO LIBRO</h2>
   </div>
-  <div class="">
-    <label for="nombreAutor">Autor</label>
-    <div class="titulo-input">
-      <input type="text" name="nombreAutor" (ngModel)="nombreAutor"/>
+  <form #f="ngForm" (ngSubmit)="f.form.valid && onSubmit()">
+    <div class="container-titulo">
+      <div class="titulo-input">
+        <input type="text" name="titulo" id="titulo" placeholder="Titulo del libro" [(ngModel)]="titulo" required/>
+      </div>
     </div>
-  </div>
+    <div class="container-nombre-autor">
+      <div class="titulo-input">
+        <input type="text" name="nombreAutor" placeholder="Autor" [(ngModel)]="nombreAutor" required />
+      </div>
+    </div>
+  
+    <div class="guardar">
+      <input type="submit" name="btnGuardar" value="AGREGAR LIBRO" />
+    </div>
+  </form>
+</div>
 
-  <div>
-    <input type="submit" name="btnGuardar" value="Guardar" />
-  </div>
-</form>

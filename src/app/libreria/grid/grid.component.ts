@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Autor } from 'src/app/interfaces/autor';
 import { Libro } from 'src/app/interfaces/libro';
 import { LibreriaService } from 'src/app/services/libreria.service';
 
@@ -9,22 +8,28 @@ import { LibreriaService } from 'src/app/services/libreria.service';
   styleUrls: ['./grid.component.css']
 })
 export class GridComponent {
-  libros: Libro[] = []
+  misLibros: Libro[] = []
 
   constructor(private libreriaService: LibreriaService){}
 
   ngOnInit(): void {
-    this.libreriaService.getLibros().subscribe((libros) => this.libros = libros)
+    this.libreriaService.getLibros().subscribe((libros) => this.misLibros = libros)
   }
   
   eliminarLibro(libro: Libro) {
-    return this.libreriaService.deleteLibro(libro).subscribe(() => {this.libros = this.libros.filter(t => t.id === libro.id)} )}
+    return this.libreriaService.deleteLibro(libro).subscribe(() => {this.misLibros = this.misLibros.filter(t => t.id === libro.id)} )}
   
   actualizarLibro(libro: Libro){
     return this.libreriaService.updateLibro(libro).subscribe()
   }
 
   anadirLibro(libro: Libro) {
-    return this.libreriaService.addLibro(libro).subscribe((libro) => {this.libros.push(libro)})
+    return this.libreriaService.addLibro(libro).subscribe((libro) => {
+      this.misLibros.push(libro);
+      alert(`Libro: 
+      titulo: ${libro.titulo}
+      autor: ${libro.autor} 
+      Añadido exitosamente`)
+    })
   }
 }
